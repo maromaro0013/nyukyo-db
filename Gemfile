@@ -57,6 +57,9 @@ group :development do
   gem 'capistrano-rbenv', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
+
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
 end
 
 # enviroment settingredis
