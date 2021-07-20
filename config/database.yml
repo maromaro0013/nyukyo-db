@@ -27,7 +27,7 @@ development:
 staging:
   <<: *default
   host: <%= ENV['NYUKYO_DB_DATABASE_HOST'] %>
-  database: nyukyo-db_development
+  database: nyukyo-db_staging
   username: <%= ENV['NYUKYO_DB_DATABASE_USER'] %>
   password: <%= ENV['NYUKYO_DB_DATABASE_PASSWORD'] %>
 
