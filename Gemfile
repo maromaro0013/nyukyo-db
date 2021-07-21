@@ -64,3 +64,6 @@ end
 
 # enviroment settingredis
 gem 'dotenv-rails'
+
+# https://github.com/heartcombo/devise
+gem 'devise', '~> 4.8.0'
