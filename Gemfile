@@ -46,10 +46,13 @@ group :development, :test do
   gem 'capistrano-rails'
 
    # testing framework
-   gem 'rspec-rails', '~> 4.1.0'
+  gem 'rspec-rails', '~> 4.1.0'
 
   # Ruby static code analyzer
    gem 'rubocop', '~> 1.18.0'
+
+   gem 'factory_bot_rails'
+   gem 'faker'
 end
 
 group :development do
