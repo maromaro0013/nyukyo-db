@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_07_22_052630) do
     t.string "kana", limit: 32, default: "", null: false
     t.datetime "birthday", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.boolean "gender", default: true, null: false
-    t.integer "food_type", limit: 1, default: 0, null: false
+    t.integer "food_type_id", limit: 1, default: 0, null: false
     t.datetime "move_in_date", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "move_out_date"
     t.string "address", default: "", null: false
