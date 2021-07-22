@@ -10,19 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_22_052630) do
+ActiveRecord::Schema.define(version: 2021_07_22_081845) do
+
+  create_table "food_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", limit: 8, default: "", null: false
+    t.string "color", limit: 6, default: "", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "residents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", limit: 32, default: "", null: false
     t.string "kana", limit: 32, default: "", null: false
     t.datetime "birthday", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.boolean "gender", default: true, null: false
-    t.integer "food_type_id", limit: 1, default: 0, null: false
     t.datetime "move_in_date", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "move_out_date"
     t.string "address", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "food_type_id", null: false
+    t.index ["food_type_id"], name: "index_residents_on_food_type_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -39,4 +47,5 @@ ActiveRecord::Schema.define(version: 2021_07_22_052630) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "residents", "food_types"
 end
