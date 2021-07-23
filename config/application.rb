@@ -31,5 +31,8 @@ module NyukyoDb
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.time_zone = 'Asia/Tokyo'
+    config.active_record.default_timezone = :local
   end
 end
