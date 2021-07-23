@@ -16,4 +16,16 @@ Residents
             <th>入居日</th>
         </tr>
     </thead>
+
+    <tbody>
+        <% @residents && @residents.each do |resident| %>
+            <tr>
+                <td><%= resident.name %></td>
+                <td><%= resident.kana %></td>
+                <td><%= resident.get_gender_str %></td>
+                <td><%= resident.birthday.strftime('%Y-%m-%d') %></td>
+                <td><%= resident.move_in_date.strftime('%Y-%m-%d %k時') %></td>
+            </tr>
+        <% end %>
+    </tbody>
 </table>
