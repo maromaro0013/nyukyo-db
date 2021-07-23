@@ -2,7 +2,7 @@
 lock "~> 3.16.0"
 
 set :application, "nyukyo-db"
-set :repo_url, "git@bitbucket.org:maromaro0013/nyukyo-db.git"
+set :repo_url, "ssh://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/nyukyo-db"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
