@@ -1,0 +1,38 @@
+<title>
+FoodTypes
+</title>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Residents</a>
+                <a class="nav-link active" aria-current="page" href="#">FoodTypes</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<h1>
+FoodTypes
+</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>食形態</th>
+            <th>色</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @food_types  && @food_types.each do |food_types| %>
+            <tr>
+                <td><%= food_types.name %></td>
+                <td><%= food_types.color %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-primary">追加する</button>
