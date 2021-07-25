@@ -1,44 +1,39 @@
 <title>
-Residents
+  Residents
 </title>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Residents</a>
-                <a class="nav-link" href="/food_types">FoodTypes</a>
-            </div>
-        </div>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Residents</a>
+        <a class="nav-link" href="/food_types">FoodTypes</a>
+      </div>
     </div>
+  </div>
 </nav>
-
 <h1>
-Residents
+  Residents
 </h1>
-
 <table class="table">
-    <thead>
-        <tr>
-            <th>氏名</th>
-            <th>ヨミガナ</th>
-            <th>入居日</th>
-            <th>食形態</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <% @residents && @residents.each do |resident| %>
-            <tr>
-                <td><%= resident.name %></td>
-                <td><%= resident.kana %></td>
-                <td><%= resident.move_in_date.strftime('%Y-%m-%d %k時') %></td>
-                <td><%= resident.food_type.name %></td>
-            </tr>
-        <% end %>
-    </tbody>
+  <thead>
+    <tr>
+      <th>氏名</th>
+      <th>ヨミガナ</th>
+      <th>入居日</th>
+      <th>食形態</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @residents && @residents.each do |resident| %>
+      <tr>
+        <td><%= resident.name %></td>
+        <td><%= resident.kana %></td>
+        <td><%= resident.move_in_date.strftime('%Y-%m-%d %k時') %></td>
+        <td><%= resident.food_type.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
 <a href="/residents/new">
-    <button type="button" class="btn btn-primary">追加する</button>
+  <button type="button" class="btn btn-primary">追加する</button>
 </a>
