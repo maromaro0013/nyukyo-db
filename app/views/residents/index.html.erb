@@ -22,9 +22,8 @@ Residents
         <tr>
             <th>氏名</th>
             <th>ヨミガナ</th>
-            <th>性別</th>
-            <th>生年月日</th>
             <th>入居日</th>
+            <th>食形態</th>
         </tr>
     </thead>
 
@@ -33,12 +32,13 @@ Residents
             <tr>
                 <td><%= resident.name %></td>
                 <td><%= resident.kana %></td>
-                <td><%= resident.get_gender_str %></td>
-                <td><%= resident.birthday.strftime('%Y-%m-%d') %></td>
                 <td><%= resident.move_in_date.strftime('%Y-%m-%d %k時') %></td>
+                <td><%= resident.food_type.name %></td>
             </tr>
         <% end %>
     </tbody>
 </table>
 
-<button type="button" class="btn btn-primary">追加する</button>
+<a href="/residents/new">
+    <button type="button" class="btn btn-primary">追加する</button>
+</a>
