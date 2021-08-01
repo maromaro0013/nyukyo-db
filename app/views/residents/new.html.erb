@@ -12,27 +12,25 @@
 <h1>
   Residents
 </h1>
-<form class="mx-2">
+
+<%= form_for @resident, html: { class: "mx-2" } do |f| %>
   <div class="mb-3">
-    <label for="resident_name" class="form-label">名前</label>
-    <input type="text" class="form-control" id="resident_name">
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="mb-3">
-    <label for="resident_name_kana" class="form-label">ヨミガナ</label>
-    <input type="text" class="form-control" id="resident_name_kana">
+    <%= f.label :kana, "ヨミガナ" %>
+    <%= f.text_field :kana, class: "form-control" %>
   </div>
   <div class="mb-3">
-    <label for="resident_move_in" class="form-label">入居日</label>
-    <input type="text" class="form-control" id="resident_move_in">
+    <%= f.label :move_in_date, "入居日" %>
+    <%= f.datetime_field :move_in_date, class: "form-control" %>
   </div>
   <div class="mb-3">
-    <label for="resident_name" class="form-label">食形態</label>
-    <select class="form-select">
-      <% @food_types && @food_types.each do |food_types| %>
-        <option value="<%= food_types.name %>"><%= food_types.name %></option>
-      <% end %>
-    </select>
+    <%= f.label :move_in_date, "食形態" %>
+    <%= f.select :food_type_id, @food_types, {}, class: "form-control" %>
   </div>
+
   <button type="submit" class="btn btn-primary">作成</button>
   <a href="/" class="btn btn-secondary">戻る</a>
-</form>
+<% end %>
