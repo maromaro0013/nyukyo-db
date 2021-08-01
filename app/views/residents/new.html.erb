@@ -9,6 +9,18 @@
     <%= f.text_field :kana, class: "form-control" %>
   </div>
   <div class="mb-3">
+    <%= f.label :move_in_date, "性別" %>
+    <%= f.select :gender, {"男性": "1", "女性": "0"}, {}, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :address, "住所" %>
+    <%= f.text_field :address, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :move_in_date, "生年月日" %>
+    <%= f.datetime_field :birthday, class: "form-control" %>
+  </div>
+  <div class="mb-3">
     <%= f.label :move_in_date, "入居日" %>
     <%= f.datetime_field :move_in_date, class: "form-control" %>
   </div>

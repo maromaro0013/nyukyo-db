@@ -3,10 +3,11 @@
 <div class="mb-3">
   <div>名前: <%= @resident.name %></div>
   <div>ヨミガナ: <%= @resident.kana %></div>
+  <div>性別: <%= @resident.get_gender_str %></div>
+  <div>住所: <%= @resident.address %></div>
   <div>生年月日: <%= @resident.birthday.strftime('%Y-%m-%d') %></div>
   <div>入居日: <%= @resident.move_in_date.strftime('%Y-%m-%d %k時') %></div>
   <div>退去日: <%= @resident.move_out_date ? @resident.move_out_date.strftime('%Y-%m-%d %k時') : "なし" %></div>
-  <div>住所: <%= @resident.address %></div>
 </div>
 
 <a href="/" class="btn btn-success">編集</a>
