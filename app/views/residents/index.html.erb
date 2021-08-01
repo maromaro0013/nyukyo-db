@@ -11,7 +11,7 @@
   <tbody>
     <% @residents && @residents.each do |resident| %>
       <tr>
-        <td><%= resident.name %></td>
+        <td><a href="/residents/<%= resident.id %>"><%= resident.name %></a></td>
         <td><%= resident.kana %></td>
         <td><%= resident.move_in_date.strftime('%Y-%m-%d %k時') %></td>
         <td><%= resident.food_type.name %></td>

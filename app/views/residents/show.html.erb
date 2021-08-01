@@ -1,13 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <div class="navbar-expand" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Residents</a>
-        <a class="nav-link" href="/food_types">FoodTypes</a>
-      </div>
-    </div>
-  </div>
-</nav>
-<h1>
-  Residents
-</h1>
+<%= render "navbar" %>
+
+<div class="mb-3">
+  <div>名前: <%= @resident.name %></div>
+  <div>ヨミガナ: <%= @resident.kana %></div>
+  <div>生年月日: <%= @resident.birthday.strftime('%Y-%m-%d') %></div>
+  <div>入居日: <%= @resident.move_in_date.strftime('%Y-%m-%d %k時') %></div>
+  <div>退去日: <%= @resident.move_out_date ? @resident.move_out_date.strftime('%Y-%m-%d %k時') : "なし" %></div>
+  <div>住所: <%= @resident.address %></div>
+</div>
+
+<a href="/" class="btn btn-success">編集</a>
+<a href="/" class="btn btn-danger">削除</a>
+<a href="/" class="btn btn-secondary">戻る</a>
+</div>

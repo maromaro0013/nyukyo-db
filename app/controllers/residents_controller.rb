@@ -16,7 +16,7 @@ class ResidentsController < ApplicationController
   end
 
   def show
-    @resident = Resident.new(Resident.find(params[:id]))
+    @resident = Resident.find(params[:id])
   end
 
   private
