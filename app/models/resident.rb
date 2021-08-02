@@ -1,5 +1,6 @@
 class Resident < ApplicationRecord
     validates :exist_food_type?, presence: true
+    validates :name, length: { in: 1..30 }
 
     belongs_to :food_type
 

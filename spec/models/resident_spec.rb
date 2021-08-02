@@ -37,4 +37,10 @@ RSpec.describe Resident, type: :model do
 
     expect(Resident.active_all.count).to eq 3
   end
+
+  it "入居者の名前は空欄ではいけません" do
+    ft = FoodType.create(name: "てすとFT")
+    r = Resident.new(name: "", food_type_id: ft.id)
+    expect(r).not_to be_valid
+  end
 end
