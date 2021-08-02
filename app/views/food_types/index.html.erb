@@ -19,12 +19,14 @@
     </tr>
   </thead>
   <tbody>
-    <% @food_types  && @food_types.each do |food_types| %>
-      <tr>
-        <td><%= food_types.name %></td>
-        <td><%= food_types.color %></td>
+    <% @food_types && @food_types.each do |food_type| %>
+      <tr style="background-color: <%= food_type.color %>">
+        <td><%= food_type.name %></td>
+        <td><%= food_type.color %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<a href="/food_types/new">
 <button type="button" class="btn btn-primary">追加する</button>
+</a>

@@ -13,7 +13,7 @@ class ResidentsController < ApplicationController
     if @resident.save
       redirect_to action: :index
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -31,7 +31,7 @@ class ResidentsController < ApplicationController
     if @resident.update_attributes(resident_params)
       redirect_to @resident
     else
-      render 'edit'
+      render "edit"
     end
   end
 
