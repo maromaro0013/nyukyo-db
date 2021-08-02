@@ -10,7 +10,6 @@
   <div>退去日: <%= @resident.move_out_date ? @resident.move_out_date.strftime('%Y-%m-%d %k時') : "なし" %></div>
 </div>
 
-<a href="/" class="btn btn-success">編集</a>
-<a href="/" class="btn btn-danger">削除</a>
+<a href="/residents/<%= @resident.id %>/edit" class="btn btn-success">編集</a>
+<%= link_to "削除", @resident, class: :"btn btn-danger", method: :delete, data: { confirm: "本当に削除しますか？" } %>
 <a href="/" class="btn btn-secondary">戻る</a>
-</div>
